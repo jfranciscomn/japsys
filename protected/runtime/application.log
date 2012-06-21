@@ -2162,3 +2162,1210 @@ REQUEST_URI=/japsys/index.php?r=site/login
 in /Applications/XAMPP/xamppfiles/htdocs/japsys/themes/bootstrap/views/layouts/main.php (95)
 in /Applications/XAMPP/xamppfiles/htdocs/japsys/themes/bootstrap/views/layouts/column1.php (13)
 in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/SiteController.php (92)
+2012/06/01 18:47:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'japdb.AuthAssignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid.
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (341)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RWebUser.php (21)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/LoginForm.php (73)
+2012/06/01 18:47:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'japdb.AuthAssignment' doesn't exist. The SQL statement executed was: SELECT *
+FROM `AuthAssignment`
+WHERE userid=:userid' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/auth/CDbAuthManager.php(334): CDbCommand->queryAll()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(341): CDbAuthManager->getAuthAssignments('francisco')
+#3 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RWebUser.php(21): RAuthorizer->isSuperuser('francisco')
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/auth/CWebUser.php(239): RWebUser->afterLogin(false)
+#5 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/LoginForm.php(73): CWebUser->login(Object(UserIdentity), 0)
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/SiteController.php(88): LoginForm->login()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('login')
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('site/login')
+#13 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/japsys/index.php?r=site/login
+HTTP_REFERER=http://localhost/japsys/index.php?r=site/login
+---
+2012/06/02 17:46:20 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/AssignmentController.php(51): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): AssignmentController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): AssignmentController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): AssignmentController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): AssignmentController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/AssignmentController.php (51)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/02 17:47:26 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/02 17:47:27 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:19:22 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:24:28 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:24:30 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:24:32 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:24:45 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:24:47 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:25:30 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:25:31 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:25:34 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:28:36 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:28:39 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:29:23 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:29:24 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(61): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (61)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:31:20 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(63): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (63)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:31:36 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(63): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): InstallController->accessRules()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): InstallController->filterAccessControl()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): InstallController->runActionWithFilters()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): InstallController->run()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (63)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:32:08 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:32:09 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:32:09 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:32:10 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:33:26 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:33:27 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:33:28 [error] [php] include(User.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(382): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php(295): model()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php(31): RAuthorizer->getSuperusers()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(275): InstallController->init()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=rights
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RAuthorizer.php (295)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (31)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:33:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1217 Cannot delete or update a parent row: a foreign key constraint fails. The SQL statement executed was: drop table if exists AuthItem.
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/components/RInstaller.php (105)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/modules/rights/controllers/InstallController.php (93)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:54:41 [error] [php] include(CDBCriteria.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/Applications/XAMPP/xamppfiles/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/Usuario.php(89): spl_autoload_call()
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/AmbitoController.php(39): Usuario->getSuperUsers()
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): AmbitoController->accessRules()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): AmbitoController->filterAccessControl()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): AmbitoController->runActionWithFilters()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): AmbitoController->run()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=ambito
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/Usuario.php (89)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/AmbitoController.php (39)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:55:05 [error] [php] strtolower() expects parameter 1 to be string, object given (/Applications/XAMPP/xamppfiles/yii/framework/web/auth/CAccessControlFilter.php:101)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): CAccessControlFilter->setRules()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): AmbitoController->filterAccessControl()
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): AmbitoController->runActionWithFilters()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): AmbitoController->run()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#8 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=ambito
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 16:55:48 [error] [php] array_map() [<a href='function.array-map'>function.array-map</a>]: Argument #2 should be an array (/Applications/XAMPP/xamppfiles/yii/framework/web/auth/CAccessControlFilter.php:101)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): AmbitoController->filterAccessControl()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): AmbitoController->runActionWithFilters()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): AmbitoController->run()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#7 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=ambito
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/05 18:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=site/index
+---
+2012/06/05 18:35:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=informeAnual/index
+---
+2012/06/05 18:42:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=presupuesto/index
+---
+2012/06/05 18:42:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=informeAnual/index
+---
+2012/06/05 19:35:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/create
+---
+2012/06/05 19:48:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/view&id=1
+---
+2012/06/05 19:48:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/XAMPP/xamppfiles/yii/framework/web/auth/CAccessControlFilter.php:168
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/auth/CAccessControlFilter.php(131): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicioFiscal...')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicioFiscal/admin
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/index
+---
+2012/06/05 19:50:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/admin
+---
+2012/06/05 19:50:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/XAMPP/xamppfiles/yii/framework/web/auth/CAccessControlFilter.php:168
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/auth/CAccessControlFilter.php(131): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('admin')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicioFiscal...')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicioFiscal/admin
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/index
+---
+2012/06/05 19:52:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/create
+---
+2012/06/05 19:52:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=informeAnual/index
+---
+2012/06/08 15:25:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php
+---
+2012/06/08 15:26:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=presupuesto/index
+---
+2012/06/08 15:26:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=presupuesto/index
+---
+2012/06/14 19:33:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '192.168.5.103' (64)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /Applications/XAMPP/xamppfiles/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(619): CApplication->getDb()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(2268): CActiveRecord->getDbConnection()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(383): CActiveRecordMetaData->__construct(Object(Usuario))
+#7 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/Usuario.php(26): CActiveRecord::model('Usuario')
+#8 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/components/UserIdentity.php(26): Usuario::model()
+#9 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#11 /Applications/XAMPP/xamppfiles/yii/framework/validators/CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 /Applications/XAMPP/xamppfiles/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#13 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/SiteController.php(88): CModel->validate()
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('login')
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('site/login')
+#20 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/japsys/index.php?r=site/login
+HTTP_REFERER=http://localhost/japsys/index.php?r=site/login
+---
+2012/06/15 15:25:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '192.168.5.103' (4)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /Applications/XAMPP/xamppfiles/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(619): CApplication->getDb()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(2268): CActiveRecord->getDbConnection()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(383): CActiveRecordMetaData->__construct(Object(Usuario))
+#7 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/Usuario.php(26): CActiveRecord::model('Usuario')
+#8 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/components/UserIdentity.php(26): Usuario::model()
+#9 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/LoginForm.php(54): UserIdentity->authenticate()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/validators/CInlineValidator.php(43): LoginForm->authenticate('password', Array)
+#11 /Applications/XAMPP/xamppfiles/yii/framework/validators/CValidator.php(197): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#12 /Applications/XAMPP/xamppfiles/yii/framework/base/CModel.php(158): CValidator->validate(Object(LoginForm), NULL)
+#13 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/SiteController.php(88): CModel->validate()
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('login')
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('site/login')
+#20 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/japsys/index.php?r=site/login
+HTTP_REFERER=http://localhost/japsys/index.php?r=site/login
+---
+2012/06/15 16:03:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php
+---
+2012/06/15 16:03:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=presupuesto/index
+---
+2012/06/15 16:09:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=areaGeografica/index
+---
+2012/06/15 16:42:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php (24)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/15 16:42:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(1018): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(791): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php(24): CActiveRecord->save()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): RegisterController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('register/index')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=register/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=register/index
+---
+2012/06/15 16:42:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php (24)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/15 16:42:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(1018): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(791): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php(24): CActiveRecord->save()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): RegisterController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('register/index')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=register/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=register/index
+---
+2012/06/15 16:42:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php (24)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/15 16:42:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(1018): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(791): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php(24): CActiveRecord->save()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): RegisterController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('register/index')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=register/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=register/index
+---
+2012/06/15 17:06:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php (24)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/15 17:06:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(1018): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(791): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php(24): CActiveRecord->save()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): RegisterController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('register/index')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=register/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=register/index
+---
+2012/06/15 17:07:08 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php (24)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/15 17:07:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'padres' for key 'usuario_UNIQUE'. The SQL statement executed was: INSERT INTO `Usuario` (`usuario`, `password`, `estatus`, `tipousuario_id`) VALUES (:yp0, :yp1, :yp2, :yp3)' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(1018): CDbCommand->execute()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(791): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/RegisterController.php(24): CActiveRecord->save()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): RegisterController->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('register/index')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/japsys/index.php?r=register/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=register/index
+---
+2012/06/15 19:40:55 [error] [exception.CException] exception 'CException' with message 'Propiedad "Usuario"."tipousuario" no se encuentra definida.' in /Applications/XAMPP/xamppfiles/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('tipousuario')
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/_view.php(9): CActiveRecord->__get('tipousuario')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/custom/widgets/CCustomListView.php(34): CController->renderPartial('_view', Array)
+#6 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(158): CCustomListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/index.php(20): CBaseController->widget('ext.custom.widg...', Array)
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#13 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#16 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/UsuarioController.php(133): CController->render('index', Array)
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): UsuarioController->actionIndex()
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#21 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#22 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#23 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#25 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#27 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('usuario/index')
+#28 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#29 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/japsys/index.php?r=usuario/index
+---
+2012/06/15 19:41:08 [error] [exception.CException] exception 'CException' with message 'Propiedad "Usuario"."tipoUsuario" no se encuentra definida.' in /Applications/XAMPP/xamppfiles/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('tipoUsuario')
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/_view.php(9): CActiveRecord->__get('tipoUsuario')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/custom/widgets/CCustomListView.php(34): CController->renderPartial('_view', Array)
+#6 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(158): CCustomListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/index.php(20): CBaseController->widget('ext.custom.widg...', Array)
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#13 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#16 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/UsuarioController.php(133): CController->render('index', Array)
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): UsuarioController->actionIndex()
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#21 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#22 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#23 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#25 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#27 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('usuario/index')
+#28 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#29 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/japsys/index.php?r=usuario/index
+---
+2012/06/15 19:44:43 [error] [exception.CException] exception 'CException' with message 'Propiedad "Usuario"."estatus1" no se encuentra definida.' in /Applications/XAMPP/xamppfiles/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('estatus1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/_view.php(20): CActiveRecord->__get('estatus1')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/custom/widgets/CCustomListView.php(34): CController->renderPartial('_view', Array)
+#6 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(158): CCustomListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/index.php(20): CBaseController->widget('ext.custom.widg...', Array)
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#13 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#16 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/UsuarioController.php(133): CController->render('index', Array)
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): UsuarioController->actionIndex()
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#21 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#22 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#23 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#25 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#27 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('usuario/index')
+#28 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#29 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/japsys/index.php?r=usuario/index
+---
+2012/06/15 19:44:46 [error] [exception.CException] exception 'CException' with message 'Propiedad "Usuario"."estatus1" no se encuentra definida.' in /Applications/XAMPP/xamppfiles/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('estatus1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/_view.php(20): CActiveRecord->__get('estatus1')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/custom/widgets/CCustomListView.php(34): CController->renderPartial('_view', Array)
+#6 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(158): CCustomListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{summary}?{sort...')
+#9 /Applications/XAMPP/xamppfiles/yii/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(174): CBaseListView->run()
+#11 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/usuario/index.php(20): CBaseController->widget('ext.custom.widg...', Array)
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#13 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#16 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/UsuarioController.php(133): CController->render('index', Array)
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): UsuarioController->actionIndex()
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#20 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#21 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#22 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#23 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#24 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#25 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#27 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('usuario/index')
+#28 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#29 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/japsys/index.php?r=usuario/index
+---
+2012/06/19 16:10:45 [error] [exception.CException] exception 'CException' with message 'Propiedad "Institucion"."municipio" no se encuentra definida.' in /Applications/XAMPP/xamppfiles/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('municipio')
+#1 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/views/institucion/view.php(34): CActiveRecord->__get('municipio')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(127): require('/Applications/X...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/InstitucionController.php(55): CController->render('view', Array)
+#7 [internal function]: InstitucionController->actionView('1')
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(InstitucionController), Array)
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(InstitucionController), Object(ReflectionMethod), Array)
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('view')
+#19 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('institucion/vie...')
+#20 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/japsys/index.php?r=institucion/view&id=1
+HTTP_REFERER=http://localhost/japsys/index.php?r=institucion/index
+---
+2012/06/20 15:54:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php
+---
+2012/06/20 15:54:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "informeAnual/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('informeAnual/in...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=informeAnual/index
+HTTP_REFERER=http://localhost/japsys/index.php
+---
+2012/06/20 15:57:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2013] Lost connection to MySQL server at 'reading authorization packet', system error: 0' in /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /Applications/XAMPP/xamppfiles/yii/framework/base/CModule.php(388): CDbConnection->init()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(619): CApplication->getDb()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(2268): CActiveRecord->getDbConnection()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/db/ar/CActiveRecord.php(383): CActiveRecordMetaData->__construct(Object(Usuario))
+#7 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/models/Usuario.php(26): CActiveRecord::model('Usuario')
+#8 /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/controllers/EjercicioFiscalController.php(39): Usuario::model()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(1145): EjercicioFiscalController->accessRules()
+#10 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /Applications/XAMPP/xamppfiles/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('index')
+#15 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicioFiscal...')
+#16 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicioFiscal/index
+HTTP_REFERER=http://localhost/japsys/
+---
+2012/06/20 17:30:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "presupuesto/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('presupuesto/ind...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=presupuesto/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ejercicioFiscal/index
+---
+2012/06/20 19:57:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "gastosDeAdministracion/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('gastosDeAdminis...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=gastosDeAdministracion/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ingresoPorCuotasdeRecuperacion/create
+---
+2012/06/20 19:57:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "gastosDeAdministracion/index"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('gastosDeAdminis...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=gastosDeAdministracion/index
+HTTP_REFERER=http://localhost/japsys/index.php?r=ingresoPorCuotasdeRecuperacion/create
+---
+2012/06/21 17:32:47 [error] [php] Object of class CMysqlColumnSchema could not be converted to string (/Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/bootstrap-theme/gii/crud/templates/default/_form.php:30)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/gii/CCodeGenerator.php(163): CrudCode->prepare()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/gii/CCodeGenerator.php(64): CrudGenerator->prepare()
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): CrudGenerator->actionIndex()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CrudGenerator->runAction()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CrudGenerator->runActionWithFilters()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CrudGenerator->run()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=gii/crud
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/bootstrap-theme/gii/crud/templates/default/_form.php (30)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/21 18:21:42 [error] [php] ucwords() expects parameter 1 to be string, array given (/Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/bootstrap-theme/gii/crud/templates/default/_form.php:36)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/gii/generators/crud/CrudCode.php(97): CrudCode->render()
+#1 /Applications/XAMPP/xamppfiles/yii/framework/gii/CCodeGenerator.php(163): CrudCode->prepare()
+#2 /Applications/XAMPP/xamppfiles/yii/framework/gii/CCodeGenerator.php(64): CrudGenerator->prepare()
+#3 /Applications/XAMPP/xamppfiles/yii/framework/web/actions/CInlineAction.php(50): CrudGenerator->actionIndex()
+#4 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(287): CrudGenerator->runAction()
+#6 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(266): CrudGenerator->runActionWithFilters()
+#7 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CrudGenerator->run()
+#8 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#9 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CWebApplication->run()
+REQUEST_URI=/japsys/index.php?r=gii/crud
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/protected/extensions/bootstrap-theme/gii/crud/templates/default/_form.php (36)
+in /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php (13)
+2012/06/21 18:28:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ejercicio/autocompletesearch"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicio/autoc...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicio/autocompletesearch&term=d
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:28:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ejercicio/autocompletesearch"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicio/autoc...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicio/autocompletesearch&term=a
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:28:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ejercicio/autocompletesearch"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicio/autoc...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicio/autocompletesearch&term=q
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:28:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=a
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:28:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=a
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:28:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=ac
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=e
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:29:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=ex
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:29:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=A
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:29:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=Ac
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:29:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "autocompletesearch" solicitada.' in /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php:484
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CController.php(271): CController->missingAction('autocompletesea...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(276): CController->run('autocompletesea...')
+#2 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('estatus/autocom...')
+#3 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/japsys/index.php?r=estatus/autocompletesearch&term=a
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---
+2012/06/21 18:32:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "ejercicio/autocompletesearch"' in /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('ejercicio/autoc...')
+#1 /Applications/XAMPP/xamppfiles/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/japsys/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/japsys/index.php?r=ejercicio/autocompletesearch&term=as
+HTTP_REFERER=http://localhost/japsys/index.php?r=gastoDeAdministracion/create
+---

@@ -14,20 +14,23 @@ class RegisterController extends Controller
 		{
 			$institucion->attributes=$_POST['Institucion'];
 			$usuario->attributes =$_POST['Usuario'];
-			$institucion->estatus=1;
-			$usuario->estatus=1;
-			$usuario->tipousuario_id=1;
+			$estatus = Estatus::model()->find('nombre=:nombre',array(':nombre'=>'Activo'));
+			$tipousuario =TipoUsuario::model()->find('nombre=:nombre',array(':nombre'=>'Institucion'));
+			$institucion->estatus=$estatus->id;
+			$usuario->estatus=$estatus->id;
+			$usuario->tipousuario_id=$tipousuario->id;
 			
 
 			if($institucion->save())
 			{
+				$usuario->institucion_id=$institucion->id;
 				if($usuario->save())
 				{
 					$this->redirect(array('site/login'));
 				}
 				else
 				{
-					$instituto->delete();
+					$institucion->delete();
 					
 				}
 			}

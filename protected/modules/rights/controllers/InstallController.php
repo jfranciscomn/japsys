@@ -26,6 +26,9 @@ class InstallController extends RController
 			$this->redirect(Yii::app()->homeUrl);
 
 		$this->_authorizer = $this->module->getAuthorizer();
+		//print_r($this->module);
+		//print_r($this->_authorizer);
+		//print_r($this->_authorizer->getSuperusers());
 		$this->_installer = $this->module->getInstaller();
 		$this->layout = $this->module->layout;
 		$this->defaultAction = 'run';
@@ -58,7 +61,7 @@ class InstallController extends RController
                     'error',
 					'ready',
 				),
-				'users'=>$this->_authorizer->getSuperusers(),
+				'users'=>array('francisco'),
 			),
 			array('deny', // Deny all users
 				'users'=>array('*'),

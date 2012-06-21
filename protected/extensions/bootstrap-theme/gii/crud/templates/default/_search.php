@@ -26,7 +26,7 @@
 
 <?php endforeach; ?>
 	<div class="actions">
-		<?php echo "<?php echo BHtml::submitButton('Search'); ?>\n"; ?>
+		<?php echo "<?php echo BHtml::submitButton('Buscar'); ?>\n"; ?>
 	</div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>

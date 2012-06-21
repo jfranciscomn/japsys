@@ -66,6 +66,7 @@ class Institucion extends CActiveRecord
 			array('siglas, domicilio_cp, contacto_telefono, contacto_fax, cluni', 'length', 'max'=>45),
 			array('rfc', 'length', 'max'=>13),
 			array('mision, vision, fecha_transformacion', 'safe'),
+			array('nombre','unique'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, nombre, siglas, mision, vision, domicio_direccion, domicilio_cp, domicilio_municipio_id, contacto_telefono, contacto_fax, contacto_email, fecha_constitucion, fecha_transformacion, rfc, donativo_deducible, donativo_convenio, cluni, ambito_id, areageografica_id, horas_promedio_trabajador, estatus', 'safe', 'on'=>'search'),

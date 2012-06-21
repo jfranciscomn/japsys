@@ -6,6 +6,7 @@ $this->breadcrumbs=array(
 	'Institucion'=>array('index'),
 	$model->id,
 );
+$valores=array('1'=>'Autorizado', '2'=>'No Autorizado');
 
 $this->menu=array(
 	array('label'=>'Listar Institucion', 'url'=>array('index')),
@@ -29,19 +30,37 @@ $this->menu=array(
 		'vision',
 		'domicio_direccion',
 		'domicilio_cp',
-		'domicilio_municipio_id',
+		array(
+			'name'=>'domicilio_municipio_id',
+			'value'=>$model->domicilioMunicipio->nombre,
+			),
 		'contacto_telefono',
 		'contacto_fax',
 		'contacto_email',
 		'fecha_constitucion',
 		'fecha_transformacion',
 		'rfc',
-		'donativo_deducible',
-		'donativo_convenio',
+		array(
+			'name'=>'donativo_deducible',
+			'value'=>$valores[$model->donativo_deducible],
+			),
+		array(
+			'name'=>'donativo_convenio',
+			'value'=>$valores[$model->donativo_convenio],
+			),
 		'cluni',
-		'ambito_id',
-		'areageografica_id',
+		array(
+			'name'=>'ambito_id',
+			'value'=>$model->ambito->nombre,
+			),
+		array(
+			'name'=>'areageografica_id',
+			'value'=>$model->areageografica->nombre,
+			),
 		'horas_promedio_trabajador',
-		'estatus',
+		array(
+			'name'=>'estatus',
+			'value'=>$model->estatus0->nombre,
+			),
 	),
 )); ?>

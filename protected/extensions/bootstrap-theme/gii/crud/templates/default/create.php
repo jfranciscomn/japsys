@@ -12,7 +12,7 @@ echo "\$this->pageCaption='Create $this->modelClass';
 \$this->pageDescription='Crear nuevo ".strtolower($this->modelClass)."';
 \$this->breadcrumbs=array(
 	'$label'=>array('index'),
-	'Create',
+	'Crear',
 );\n";
 ?>
 

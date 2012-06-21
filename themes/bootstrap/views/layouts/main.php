@@ -30,33 +30,66 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="<?php echo $this->createAbsoluteUrl('//'); ?>"><?php echo CHtml::encode(Yii::app()->name); ?></a>
-				<?php $this->widget('ext.custom.widgets.BMenu',array(
-					'items'=>array(
-						array('label'=>'Home',
-						      'url'=>array('/site/index'),
-							),
-						array('label'=>'hola',
-					      'url'=>'#',
-					      'itemOptions'=>array('class'=>'dropdown','id'=>'opcion',),
-					      'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
-					      'submenuOptions'=>array('class'=>'dropdown-menu'),
-						  'items'=> array(array('label'=>'hola', 'url'=>array('/site/index'),),
-											array('label'=>'hola', 'url'=>array('/site/index'), 'itemOptions'=>array()),
-											),
-						),
-						array('label'=>'hola',
-					      'url'=>'#',
-					      'itemOptions'=>array('class'=>'dropdown','id'=>'opcion', ),
-					      'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
-					      'submenuOptions'=>array('class'=>'dropdown-menu'),
-						  'items'=> array(array('label'=>'hola', 'url'=>array('/site/index'),),
-											array('label'=>'hola', 'url'=>array('/site/index'), 'itemOptions'=>array()),
-											),
-						),
-						array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-						array('label'=>'Contact', 'url'=>array('/site/contact')),
-						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-					),
+				<?php 
+				$items=array();
+			
+				if(!Yii::app()->user->isGuest)
+				{
+					$items[]=array('label'=>'Informe Anual',
+				      'url'=>array('informeAnual/index'),
+				      /*'itemOptions'=>array('class'=>'dropdown','id'=>'opcion',),
+				      'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
+				      'submenuOptions'=>array('class'=>'dropdown-menu'),
+					  'items'=> array(array('label'=>'Ambitos', 'url'=>array('/ambito/index'),),
+										array('label'=>'Areas Geograficas', 'url'=>array('/areaGeografica/index'), 'itemOptions'=>array()),
+										array('label'=>'Instituciones', 'url'=>array('/institucion/index'), 'itemOptions'=>array()),
+										),*/
+					);
+				
+			
+				}
+				if(!Yii::app()->user->isGuest && in_array(Yii::app()->user->name,Usuario::model()->getSuperUsers()))
+				{
+					$items[]=array('label'=>'Presupuesto',
+				      'url'=>'#',
+				      'itemOptions'=>array('class'=>'dropdown','id'=>'opcion',),
+				      'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
+				      'submenuOptions'=>array('class'=>'dropdown-menu'),
+					  'items'=> array(
+										array('label'=>'Ingresos por Cuotas de Recuperacion', 'url'=>array('/ingresoPorCuotasdeRecuperacion/index'),),
+										array('label'=>'Ingresos por Donativos', 'url'=>array('/ingresoPorDonativo/index'), 'itemOptions'=>array()),
+										array('label'=>'Ingresos por Eventos', 'url'=>array('/ingresoPorEventos/index'), 'itemOptions'=>array()),
+										array('label'=>'Ingresos por Venta', 'url'=>array('/ingresoPorVenta/index'), 'itemOptions'=>array()),
+										array('label'=>'Ingresos por Venta de Detalle', 'url'=>array('/ingresoPorVenta/index'), 'itemOptions'=>array()),
+										
+										array('label'=>'Gastos Operativos', 'url'=>array('/gastoOperativos/index'), 'itemOptions'=>array()),
+										array('label'=>'Gastos de Administracion', 'url'=>array('/gastoDeAdministracion/index'), 'itemOptions'=>array()),
+										
+										),
+				
+					);
+					
+					$items[]=array('label'=>'Administracion',
+				      'url'=>'#',
+				      'itemOptions'=>array('class'=>'dropdown','id'=>'opcion',),
+				      'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'),
+				      'submenuOptions'=>array('class'=>'dropdown-menu'),
+					  'items'=> array(array('label'=>'Ambitos', 'url'=>array('/ambito/index'),),
+										array('label'=>'Areas Geograficas', 'url'=>array('/areaGeografica/index'), 'itemOptions'=>array()),
+										array('label'=>'Instituciones', 'url'=>array('/institucion/index'), 'itemOptions'=>array()),
+										array('label'=>'Ejercicios', 'url'=>array('/ejercicioFiscal/index'), 'itemOptions'=>array()),
+										
+										array('label'=>'Estados', 'url'=>array('/estado/index'), 'itemOptions'=>array()),
+										array('label'=>'Municipios', 'url'=>array('/municipio/index'), 'itemOptions'=>array()),
+										
+										array('label'=>'Usuarios', 'url'=>array('/usuario/index'), 'itemOptions'=>array()),
+										),
+					);
+				}
+				$items[]=array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest);
+				
+				$this->widget('ext.custom.widgets.BMenu',array(
+					'items'=>$items,
 			
 					'htmlOptions'=>array('class'=>'nav nav-pills'),
 					'activateParents'=>true,

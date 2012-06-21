@@ -6,15 +6,17 @@
 			<?php echo CHtml::encode($data->usuario); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->password); ?>
+			<?php echo CHtml::encode($data->tipousuario->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->tipousuario_id); ?>
+			<?php
+			 	if(isset($data->institucion))
+					echo CHtml::encode($data->institucion->nombre);
+				else
+				  	echo CHtml::encode('');
+				?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->institucion_id); ?>
-		</td>
-		<td>
-			<?php echo CHtml::encode($data->estatus); ?>
+			<?php echo CHtml::encode($data->estatus0->nombre); ?>
 		</td>
 	</tr>

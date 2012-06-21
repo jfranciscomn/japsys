@@ -21,8 +21,8 @@ return array(
 		'ext.bootstrap-theme.widgets.*',
 		'ext.bootstrap-theme.helpers.*',
 		'ext.bootstrap-theme.behaviors.*',
-		'application.modules.rights.*', 
-		'application.modules.rights.components.*',
+		//'application.modules.rights.*', 
+		//'application.modules.rights.components.*',
 	),
 
 	'modules'=>array(
@@ -35,21 +35,38 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 			'generatorPaths'=>array('ext.bootstrap-theme.gii',),
 		),
-		'rights'=>array(
+	/*	'rights'=>array(
 			'install'=>true,
-		),
+			'superuserName'=>'francisco', 
+			'superuserName'=>'francisco', 
+			'authenticatedName'=>'Authenticated', 
+			'userIdColumn'=>'id',
+			'userNameColumn'=>'usuario', 
+			'enableBizRule'=>true, 
+			'enableBizRuleData'=>false, 
+			'displayDescription'=>true,
+			'flashSuccessKey'=>'RightsSuccess', 
+			'flashErrorKey'=>'RightsError', 
+			'install'=>true,
+			'baseUrl'=>'/rights', 
+			'layout'=>'rights.views.layouts.main', 
+			'appLayout'=>'application.views.layouts.main', 
+			'cssFile'=>'rights.css',
+			'install'=>true,
+			'debug'=>false,
+		),*/
 	),
 
 	// application components
 	'components'=>array(
 		'user'=>array(
 			// enable cookie-based authentication
-			'class'=>'RWebUser',
+			//'class'=>'RWebUser',
 			'allowAutoLogin'=>true,
 		),
-		'authManager'=>array(
+		/*'authManager'=>array(
 			'class'=>'RDbAuthManager',
-		),
+		),*/
 			
 		// uncomment the following to use a MySQL database
 		

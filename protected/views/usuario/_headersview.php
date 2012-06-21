@@ -6,9 +6,7 @@
 		<td >
 			<b><?php echo CHtml::encode($data->getAttributeLabel('usuario')); ?></b>
 		</td>
-		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?></b>
-		</td>
+
 		<td >
 			<b><?php echo CHtml::encode($data->getAttributeLabel('tipousuario_id')); ?></b>
 		</td>
