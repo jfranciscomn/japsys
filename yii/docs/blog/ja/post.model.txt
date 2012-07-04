@@ -1,0 +1,221 @@
+Postモデルのカスタマイズ
+======================
+
+`Gii`ツールにより生成された`Post`モデルクラスは、主に2つの点において修正されます。
+
+ - `rules()`メソッド: モデルアトリビュートに対する検証規則を規定
+ - `relations()`メソッド: リレーショナルオブジェクトを規定
+
+> Info|情報: [モデル](http://www.yiiframework.com/doc/guide/basics.model)
+はアトリビュートのリストから構成され、それぞれに対応するデータベーステーブルのコラムを持ちます。
+アトリビュートは明示的にクラスメンバ変数として宣言される場合もあり、宣言無しで宣言されることもあります。
+
+`rules()`メソッドのカスタマイズ
+----------------------------
+
+最初に、アトリビュート値がデータベースに格納される前に正しいことが確実になるような検証ルールを定めます。
+例えば、`Post`クラスの`status`アトリビュートは整数の1, 2か3でなければなりません。
+`Gii`ツールもそれぞれのモデルに対してまた検証ルールを生成します。
+しかしながらそれはテーブルカラム情報に基いたルールであり、妥当とは言えません。
+
+要求分析に基き、`rules()`メソッドを以下のように修正します。
+
+~~~
+[php]
+public function rules()
+{
+	return array(
+		array('title, content, status', 'required'),
+		array('title', 'length', 'max'=>128),
+		array('status', 'in', 'range'=>array(1,2,3)),
+		array('tags', 'match', 'pattern'=>'/^[\w\s,]+$/',
+			'message'=>'Tags can only contain word characters.'),
+		array('tags', 'normalizeTags'),
+
+		array('title, status', 'safe', 'on'=>'search'),
+	);
+}
+~~~
+
+上記において、`title`、`content`、`status`アトリビュートは必須です。
+`title`長は128を超えてはなりません。
+`status`アトリビュート値は1 (ドラフト)、2 (公開)、3 (書庫)のうちのいずれかです。
+`tags`アトリビュートは語句とカンマしか含むことはできません。
+さらに、ユーザが入力したタグを、ユニークでカンマで正しく分離されるように`normalizeTags`を使用します。
+最後のルールはサーチ機能で使用しますが、後で説明します。
+
+`required`、`length`、`in`、`match`のような検証ルールは全てYiiが提供する備え付けのものです。
+`normalizeTags`バリデータはメソッドで構成されるバリデータで、`Post`クラスにおいて定義される必要があります。
+より詳細な、どのようにバリデータを定義するかの情報は、[ガイド](http://www.yiiframework.com/doc/guide/form.model#declaring-validation-rules)を参照してください。
+
+~~~
+[php]
+public function normalizeTags($attribute,$params)
+{
+	$this->tags=Tag::array2string(array_unique(Tag::string2array($this->tags)));
+}
+~~~
+
+ここで、`array2string`と`string2array`は新しいメソッドで、`Tag`モデルクラスで定義します。
+
+~~~
+[php]
+public static function string2array($tags)
+{
+	return preg_split('/\s*,\s*/',trim($tags),-1,PREG_SPLIT_NO_EMPTY);
+}
+
+public static function array2string($tags)
+{
+	return implode(', ',$tags);
+}
+~~~
+
+`rules()`メソッドで宣言されたルールはひとつひとつ、モデルインスタンスの
+[validate()|CModel::validate]メソッドまたは[save()|CActiveRecord::save]メソッドをコールする際に実行されます。
+
+> Note|注: 覚えて欲しい重要なことがあります。`rules()`にはエンドユーザが入力する属性だけを書いてください。`Post`モデルの`id`や`create_time`といったプログラムやデータベースによって設定される属性は、`rules()`に入れるべきではありません。詳しくは、[属性への代入をセキュアにする](http://www.yiiframework.com/doc/guide/form.model#securing-attribute-assignments)を参照のこと。
+
+以上の変更をしたら、postの作成ページを再び開いて、新しいバリデーションルールが機能しているか検証することができます。
+
+`relations()`メソッドのカスタマイズ
+-----------------------------------
+
+最後に`relations()`メソッドをカスタマイズして、postに関連するオブジェクトを指定します。`relations()`で関連オブジェクトを宣言することによって[リレーショナルアクティブレコード (RAR)](http://www.yiiframework.com/doc/guide/database.arr)のパワフルな機能を引き出し、執筆者やコメント一覧などの、postに関連するオブジェクトの情報にアクセスできるようになります。複雑なSQL JOIN構文を書く必要はありません。
+
+`relations()`メソッドを次のように書き換えます。
+
+~~~
+[php]
+public function relations()
+{
+	return array(
+		'author' => array(self::BELONGS_TO, 'User', 'author_id'),
+		'comments' => array(self::HAS_MANY, 'Comment', 'post_id',
+			'condition'=>'comments.status='.Comment::STATUS_APPROVED,
+			'order'=>'comments.create_time DESC'),
+		'commentCount' => array(self::STAT, 'Comment', 'post_id',
+			'condition'=>'status='.Comment::STATUS_APPROVED),
+	);
+}
+~~~
+
+上記メソッドで使用する2つの定数を、`Comment`モデルに加えます。
+
+~~~
+[php]
+class Comment extends CActiveRecord
+{
+	const STATUS_PENDING=1;
+	const STATUS_APPROVED=2;
+	......
+}
+~~~
+
+`relations()`で宣言したリレーションは次のような意味です。
+
+ * 1つのpostが、1つの執筆者（author）に所属する。執筆者のクラスは`User`で、postの`author_id`属性で結び付けられる。
+ * 1つのpostが、多数のコメントを持つ。コメントのクラスは`Comment`で、コメントの`post_id`属性で結び付けられる。コメントは作成日時順にソートされ、承認済み(APPROVED)のコメントだけで構成される。
+ * `commentCount`は、集計結果を返す少し特殊なリレーションで、postが持つコメント数を表す。
+
+上記のリレーションを宣言することで、以下のように簡単にpostの執筆者やコメントにアクセスできます。
+
+~~~
+[php]
+$author=$post->author;
+echo $author->username;
+
+$comments=$post->comments;
+foreach($comments as $comment)
+	echo $comment->content;
+~~~
+
+リレーションの宣言と使い方の詳細については、[ガイド](http://www.yiiframework.com/doc/guide/database.arr)をご覧ください。
+
+`url`プロパティの追加
+---------------------
+
+postには、内容を閲覧するためのユニークなURLが結び付いています。このURLを取得するために、コードのいたるところで[CWebApplication::createUrl] を書くのではなく、`Post`モデルに`url`属性を追加することで、URLを生成する1つのコードを使い回せます。後でURLを美しくする方法を説明するときに、このプロパティの追加が非常に便利なことが分かります。
+
+`url`プロパティを追加するために、以下のように`Post`クラスを修正してgetterメソッドを追加します。
+
+~~~
+[php]
+class Post extends CActiveRecord
+{
+	public function getUrl()
+	{
+		return Yii::app()->createUrl('post/view', array(
+			'id'=>$this->id,
+			'title'=>$this->title,
+		));
+	}
+}
+~~~
+
+URLのGETパラメータとして、postのIDのほかにタイトルも追加しています。これはSEO（検索エンジン最適化）が主な目的です。後ほど[Beautifying URLs](/doc/blog/final.url)で説明します。
+
+`Post`の最も祖先のクラスは[CComponent]なので、`getUrl()`というgetterメソッドを追加することで、`$post->url`という書き方ができるようになります。`$post->url`にアクセスすると、getterメソッドが実行され、その結果が式の値として返されます。このようなコンポーネントの機能の詳細については[ガイド](/doc/guide/basics.component)を参照のこと。
+
+ステータスをテキストで表現する
+------------------------------
+
+postのステータスはinteger型でデータベースに保存されるので、エンドユーザに分かりやすく表示するために、テキスト形式での表現を提供する必要があります。大きなシステムでは、このような要求はよくあることです。
+
+一般的な解決策として、ここでは`tbl_lookup`テーブルを使います。このテーブルにinteger値とテキスト表現の対応表を持たせ、このテキスト表現を他のデータオブジェクトから利用します。`Lookup`モデルクラスを以下のように修正し、テーブル内のテキストデータに容易にアクセスできるようにします。
+
+
+~~~
+[php]
+class Lookup extends CActiveRecord
+{
+	private static $_items=array();
+
+	public static function items($type)
+	{
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return self::$_items[$type];
+	}
+
+	public static function item($type,$code)
+	{
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
+	}
+
+	private static function loadItems($type)
+	{
+		self::$_items[$type]=array();
+		$models=self::model()->findAll(array(
+			'condition'=>'type=:type',
+			'params'=>array(':type'=>$type),
+			'order'=>'position',
+		));
+		foreach($models as $model)
+			self::$_items[$type][$model->code]=$model->name;
+	}
+}
+~~~
+
+新しいコードは主に2つの静的メソッド、`Lookup::items()`と`Lookup::item()`を提供します。前者は、指定したデータタイプに属する文字列のリストを返します。後者は、データのタイプと値を指定することで、特定の文字列を返します。
+
+ブログのデータベースに、Lookup用のタイプとして`PostStatus`と`CommentStatus`を事前に追加しておきます。前者は可能な投稿ステータスを示し、後者はコメントステータスを示します。
+
+コードを読みやすくするために、一連のステータスを表すinteger値の定数を宣言します。コード中で各ステータス値を参照するときはこの定数を使うようにします。
+
+~~~
+[php]
+class Post extends CActiveRecord
+{
+	const STATUS_DRAFT=1;
+	const STATUS_PUBLISHED=2;
+	const STATUS_ARCHIVED=3;
+	......
+}
+~~~
+
+これによって、`Lookup::items('PostStatus')`を呼ぶと、投稿のステータスとして取りうる値のリスト（integer値をインデックスとした、各値に対応するテキスト表現の一覧）を取得できます。また、`Lookup::item('PostStatus', Post::STATUS_PUBLISHED)`を呼ぶと、公開済みというステータスのテキスト表現を取得できます。
+
+<div class="revision">$Id: post.model.txt 3366 2011-08-03 21:24:26Z alexander.makarow $</div>
