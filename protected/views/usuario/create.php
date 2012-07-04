@@ -1,10 +1,10 @@
 <?php
-$this->pageCaption='Create Usuario';
+$this->pageCaption='Crear Usuario';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo usuario';
 $this->breadcrumbs=array(
 	'Usuario'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

@@ -1,18 +1,18 @@
 <?php
-$this->pageCaption='Actualizar Area Geografica '.$model->id;
+$this->pageCaption='Actualizar AreaGeografica '.$model->id;
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='';
 $this->breadcrumbs=array(
-	'Areas Geograficas'=>array('index'),
+	'Area Geografica'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
 	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Areas Geograficas', 'url'=>array('index')),
-	array('label'=>'Crear Area Geografica', 'url'=>array('create')),
-	array('label'=>'Ver Area Geografica', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Areas Geograficas', 'url'=>array('admin')),
+	array('label'=>'Listar Area Geografica', 'url'=>array('index')),
+	array('label'=>'Crear AreaGeografica', 'url'=>array('create')),
+	array('label'=>'Ver AreaGeografica', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Administrar Area Geografica', 'url'=>array('admin')),
 );
 ?>
 

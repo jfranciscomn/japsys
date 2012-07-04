@@ -1,5 +1,5 @@
 <?php
-$this->pageCaption='Crear Ambito';
+$this->pageCaption='Create Ambito';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo ambito';
 $this->breadcrumbs=array(
@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Ambitos', 'url'=>array('index')),
+	array('label'=>'Listar Ambito', 'url'=>array('index')),
 	array('label'=>'Administrar Ambito', 'url'=>array('admin')),
 );
 ?>

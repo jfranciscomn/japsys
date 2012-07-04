@@ -9,10 +9,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Ambitos', 'url'=>array('index')),
+	array('label'=>'Listar Ambito', 'url'=>array('index')),
 	array('label'=>'Crear Ambito', 'url'=>array('create')),
 	array('label'=>'Ver Ambito', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Administrar Ambitos', 'url'=>array('admin')),
+	array('label'=>'Administrar Ambito', 'url'=>array('admin')),
 );
 ?>
 

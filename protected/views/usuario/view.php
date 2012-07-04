@@ -24,21 +24,12 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'usuario',
-		array(
-			'name'=>'tipousuario_id',
-			'value'=>$model->tipousuario->nombre,
-			),
-		array(
-			'name'=>'institucion_id',
-			'value'=>$model->institucion->nombre,
-			),
-		array(
-			'name'=>'tipousuario_id',
-			'value'=>$model->tipousuario->nombre,
-			),
-		array(
-			'name'=>'estatus',
-			'value'=>$model->estatus0->nombre,
-			),
+
+		array(	'name'=>'tipousuario_did',
+		        'value'=>$model->tipousuario->nombre,),
+		array(	'name'=>'institucion_aid',
+		        'value'=>$model->institucion->nombre,),
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

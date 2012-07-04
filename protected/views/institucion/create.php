@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo institucion';
 $this->breadcrumbs=array(
 	'Institucion'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

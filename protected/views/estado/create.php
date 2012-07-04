@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo estado';
 $this->breadcrumbs=array(
 	'Estado'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

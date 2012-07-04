@@ -28,19 +28,19 @@
 			<?php echo CHtml::encode($data->otros); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->institucion_id); ?>
+			<?php echo CHtml::encode($data->institucion->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->ejercicio_id); ?>
+			<?php echo CHtml::encode($data->ejercicioFiscal->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->estatus_id); ?>
+			<?php echo CHtml::encode($data->estatus->nombre); ?>
 		</td>
 		<td>
 			<?php echo CHtml::encode($data->editable); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->ultimaModificacion); ?>
+			<?php echo CHtml::encode($data->ultimaModificacion_dt); ?>
 		</td>
 		*/ ?>
 	</tr>

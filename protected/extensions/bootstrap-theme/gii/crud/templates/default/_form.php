@@ -36,7 +36,7 @@ foreach($this->tableSchema->columns as $column)
 					$modeloColumna=ucwords($partes[0]);
 					echo '<?php echo $form->dropDownList($model,'.$column->name.',CHtml::listData('.$modeloColumna."::model()->findAll(), 'id', 'nombre')); ?>";
 				}
-				else if($finalCampo=='cid'){
+				else if($finalCampo=='aid'){
 					$modeloColumna=$partes[0];
 					
 					echo "<?php \$this->widget('ext.custom.widgets.EJuiAutoCompleteFkField', array(
@@ -52,7 +52,7 @@ foreach($this->tableSchema->columns as $column)
 					      ),
 					 )); ?>";
 				}
-				else if($finalCampo=='f'){
+				else if($finalCampo=='dt'){
 					echo "<?php
 					if (\$$column->name!='') 
 						\$$column->name=date('d-m-Y',strtotime(\$$column->name));
@@ -61,7 +61,7 @@ foreach($this->tableSchema->columns as $column)
 					                                       'attribute'=>'$column->name',
 					                                       'value'=>\$$column->name,
 					                                       'language' => 'es',
-					                                       'htmlOptions' => array('readonly'=>"readonly"),
+					                                       'htmlOptions' => array('readonly'=>\"readonly\"),
 					                                       'options'=>array(
 					                                               'autoSize'=>true,
 					                                               'defaultDate'=>\$$column->name,
@@ -76,8 +76,8 @@ foreach($this->tableSchema->columns as $column)
 					                                               'showOtherMonths'=>true,
 					                                               'changeMonth' => 'true',
 					                                               'changeYear' => 'true',
-					                                               'minDate'=>"-70Y", //fecha minima
-					                                               'maxDate'=> "+10Y", //fecha maxima
+					                                               'minDate'=>\"-70Y\", //fecha minima
+					                                               'maxDate'=> \"+10Y\", //fecha maxima
 					                                       ),)); ?>";
 				}
 				

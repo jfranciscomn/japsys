@@ -6,10 +6,10 @@
 			<?php echo CHtml::encode($data->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->fecha_inicio); ?>
+			<?php echo CHtml::encode($data->fechaInicio_dt); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->fecha_fin); ?>
+			<?php echo CHtml::encode($data->fechaFin_dt); ?>
 		</td>
 		<td>
 			<?php echo CHtml::encode($data->estatus->nombre); ?>

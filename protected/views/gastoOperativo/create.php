@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo gastooperativo';
 $this->breadcrumbs=array(
 	'Gasto Operativo'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

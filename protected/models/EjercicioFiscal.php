@@ -6,25 +6,30 @@
  * The followings are the available columns in table 'EjercicioFiscal':
  * @property integer $id
  * @property string $nombre
- * @property string $fecha_inicio
- * @property string $fecha_fin
- * @property integer $estatus_id
+ * @property string $fechaInicio_dt
+ * @property string $fechaFin_dt
+ * @property integer $estatus_did
  *
  * The followings are the available model relations:
  * @property Estatus $estatus
+ * @property GastoDeAdministracion[] $gastoDeAdministracions
+ * @property GastoOperativo[] $gastoOperativos
+ * @property IngresoPorCuotasdeRecuperacion[] $ingresoPorCuotasdeRecuperacions
+ * @property IngresoPorDonativo[] $ingresoPorDonativos
+ * @property IngresoPorEvento[] $ingresoPorEventos
+ * @property IngresoPorVenta[] $ingresoPorVentas
  */
 class EjercicioFiscal extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return EjercicioFiscal the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -41,13 +46,13 @@ class EjercicioFiscal extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, fecha_inicio, estatus_id', 'required'),
-			array('estatus_id', 'numerical', 'integerOnly'=>true),
+			array('nombre, fechaInicio_dt, estatus_did', 'required'),
+			array('estatus_did', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>145),
-			array('fecha_fin', 'safe'),
+			array('fechaFin_dt', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, fecha_inicio, fecha_fin, estatus_id', 'safe', 'on'=>'search'),
+			array('id, nombre, fechaInicio_dt, fechaFin_dt, estatus_did', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +64,13 @@ class EjercicioFiscal extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_id'),
+			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_did'),
+			'gastoDeAdministracions' => array(self::HAS_MANY, 'GastoDeAdministracion', 'ejercicioFisca_did'),
+			'gastoOperativos' => array(self::HAS_MANY, 'GastoOperativo', 'ejercicioFiscal_did'),
+			'ingresoPorCuotasdeRecuperacions' => array(self::HAS_MANY, 'IngresoPorCuotasdeRecuperacion', 'ejercicioFiscal_did'),
+			'ingresoPorDonativos' => array(self::HAS_MANY, 'IngresoPorDonativo', 'ejercicioFiscal_did'),
+			'ingresoPorEventos' => array(self::HAS_MANY, 'IngresoPorEvento', 'ejercicioFiscal_did'),
+			'ingresoPorVentas' => array(self::HAS_MANY, 'IngresoPorVenta', 'ejercicio_did'),
 		);
 	}
 
@@ -71,9 +82,9 @@ class EjercicioFiscal extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nombre' => 'Nombre',
-			'fecha_inicio' => 'Fecha Inicio',
-			'fecha_fin' => 'Fecha Fin',
-			'estatus_id' => 'Estatus',
+			'fechaInicio_dt' => 'Fecha Inicio',
+			'fechaFin_dt' => 'Fecha Fin',
+			'estatus_did' => 'Estatus',
 		);
 	}
 
@@ -90,9 +101,9 @@ class EjercicioFiscal extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('fecha_inicio',$this->fecha_inicio,true);
-		$criteria->compare('fecha_fin',$this->fecha_fin,true);
-		$criteria->compare('estatus_id',$this->estatus_id);
+		$criteria->compare('fechaInicio_dt',$this->fechaInicio_dt,true);
+		$criteria->compare('fechaFin_dt',$this->fechaFin_dt,true);
+		$criteria->compare('estatus_did',$this->estatus_did);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

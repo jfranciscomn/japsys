@@ -1,15 +1,15 @@
 <?php
-$this->pageCaption='Administrar Area Geografica';
+$this->pageCaption='Manage Area Geografica';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Administar area geografica';
 $this->breadcrumbs=array(
 	'Area Geografica'=>array('index'),
-	'Administrar',
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Areas Geograficas', 'url'=>array('index')),
-	array('label'=>'Crear Area Geografica', 'url'=>array('create')),
+	array('label'=>'Listar Area Geografica', 'url'=>array('index')),
+	array('label'=>'Crear AreaGeografica', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -44,8 +44,8 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'nombre',
-		array(	'name'=>'estatus',
-		        'value'=>'$data->estatus0->nombre',
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
 			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(
 			'class'=>'CButtonColumn',

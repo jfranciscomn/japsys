@@ -10,6 +10,6 @@
 			<b><?php echo CHtml::encode($data->getAttributeLabel('descripcion')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus_did')); ?></b>
 		</td>
 	</tr>

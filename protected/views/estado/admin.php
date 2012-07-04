@@ -1,14 +1,14 @@
 <?php
-$this->pageCaption='Administrar Estados';
+$this->pageCaption='Manage Estado';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
-$this->pageDescription='Administar estados';
+$this->pageDescription='Administar estado';
 $this->breadcrumbs=array(
 	'Estado'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Estados', 'url'=>array('index')),
+	array('label'=>'Listar Estado', 'url'=>array('index')),
 	array('label'=>'Crear Estado', 'url'=>array('create')),
 );
 
@@ -45,8 +45,8 @@ $('.search-form form').submit(function(){
 		'id',
 		'clave',
 		'nombre',
-		array(	'name'=>'estatus',
-		        'value'=>'$data->estatus0->nombre',
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
 			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(
 			'class'=>'CButtonColumn',

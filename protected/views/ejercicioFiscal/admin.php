@@ -44,9 +44,9 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'nombre',
-		'fecha_inicio',
-		'fecha_fin',
-		array(	'name'=>'estatus_id',
+		'fechaInicio_dt',
+		'fechaFin_dt',
+		array(	'name'=>'estatus_did',
 		        'value'=>'$data->estatus->nombre',
 			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(

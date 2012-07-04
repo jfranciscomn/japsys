@@ -16,56 +16,53 @@
 			<b><?php echo CHtml::encode($data->getAttributeLabel('vision')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('domicio_direccion')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('domicioDireccion')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('domicilio_cp')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('domicilioCP')); ?></b>
 		</td>
 		<?php /*
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('domicilio_estado_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('municipio_aid')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('domicilio_municipio_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('contactoTelefono')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('contacto_telefono')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('contactoFax')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('contacto_fax')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('contactoEmail')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('contacto_email')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('fechaConstitucion_dt')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_constitucion')); ?></b>
-		</td>
-		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('fecha_transformacion')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('fechaTransformacion_dt')); ?></b>
 		</td>
 		<td >
 			<b><?php echo CHtml::encode($data->getAttributeLabel('rfc')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('donativo_deducible')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('donativoDeducible')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('donativo_convenio')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('donativoConvenio')); ?></b>
 		</td>
 		<td >
 			<b><?php echo CHtml::encode($data->getAttributeLabel('cluni')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('ambito_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('ambito_did')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('areageografica_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('areaGeografica_did')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('horas_promedio_trabajador')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('horasPromedio_trabajador')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus_did')); ?></b>
 		</td>
 		*/ ?>
 	</tr>

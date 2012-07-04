@@ -49,11 +49,17 @@ $('.search-form form').submit(function(){
 		'desayunos',
 		'conferencias',
 		/*
-		'institucion_id',
-		'ejercicio_id',
-		'estatus_id',
+		array(	'name'=>'institucion_aid',
+		        'value'=>'$data->institucion->nombre',
+			    'filter'=>CHtml::listData(Institucion::model()->findAll(), 'id', 'nombre'),),
+		array(	'name'=>'ejercicioFiscal_did',
+		        'value'=>'$data->ejercicioFiscal->nombre',
+			    'filter'=>CHtml::listData(EjercicioFiscal::model()->findAll(), 'id', 'nombre'),),
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
+			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		'editable',
-		'ultimaModificacion',
+		'ultimaModificacion_dt',
 		*/
 		array(
 			'class'=>'CButtonColumn',

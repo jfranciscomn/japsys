@@ -1,14 +1,14 @@
 <?php
-$this->pageCaption='Administrar Ambitos';
+$this->pageCaption='Manage Ambito';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
-$this->pageDescription='Administar ambitos';
+$this->pageDescription='Administar ambito';
 $this->breadcrumbs=array(
 	'Ambito'=>array('index'),
-	'Administrar',
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Ambitos', 'url'=>array('index')),
+	array('label'=>'Listar Ambito', 'url'=>array('index')),
 	array('label'=>'Crear Ambito', 'url'=>array('create')),
 );
 
@@ -44,8 +44,8 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'nombre',
-		array(	'name'=>'estatus',
-		        'value'=>'$data->estatus0->nombre',
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
 			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(
 			'class'=>'CButtonColumn',

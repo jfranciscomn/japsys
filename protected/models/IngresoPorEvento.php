@@ -10,24 +10,28 @@
  * @property double $rifas
  * @property double $desayunos
  * @property double $conferencias
- * @property integer $institucion_id
- * @property integer $ejercicio_id
- * @property integer $estatus_id
+ * @property integer $institucion_aid
+ * @property integer $ejercicioFiscal_did
+ * @property integer $estatus_did
  * @property integer $editable
- * @property string $ultimaModificacion
+ * @property string $ultimaModificacion_dt
+ *
+ * The followings are the available model relations:
+ * @property Institucion $institucion
+ * @property EjercicioFiscal $ejercicioFiscal
+ * @property Estatus $estatus
  */
 class IngresoPorEvento extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return IngresoPorEvento the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -44,12 +48,12 @@ class IngresoPorEvento extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('colectas, eventos, rifas, desayunos, conferencias, institucion_id, ejercicio_id, estatus_id, editable, ultimaModificacion', 'required'),
-			array('institucion_id, ejercicio_id, estatus_id, editable', 'numerical', 'integerOnly'=>true),
+			array('institucion_aid, ejercicioFiscal_did, estatus_did, editable, ultimaModificacion_dt', 'required'),
+			array('institucion_aid, ejercicioFiscal_did, estatus_did, editable', 'numerical', 'integerOnly'=>true),
 			array('colectas, eventos, rifas, desayunos, conferencias', 'numerical'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, colectas, eventos, rifas, desayunos, conferencias, institucion_id, ejercicio_id, estatus_id, editable, ultimaModificacion', 'safe', 'on'=>'search'),
+			array('id, colectas, eventos, rifas, desayunos, conferencias, institucion_aid, ejercicioFiscal_did, estatus_did, editable, ultimaModificacion_dt', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +65,9 @@ class IngresoPorEvento extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'institucion' => array(self::BELONGS_TO, 'Institucion', 'institucion_aid'),
+			'ejercicioFiscal' => array(self::BELONGS_TO, 'EjercicioFiscal', 'ejercicioFiscal_did'),
+			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_did'),
 		);
 	}
 
@@ -76,11 +83,11 @@ class IngresoPorEvento extends CActiveRecord
 			'rifas' => 'Rifas',
 			'desayunos' => 'Desayunos',
 			'conferencias' => 'Conferencias',
-			'institucion_id' => 'Institucion',
-			'ejercicio_id' => 'Ejercicio',
-			'estatus_id' => 'Estatus',
+			'institucion_aid' => 'Institucion',
+			'ejercicioFiscal_did' => 'Ejercicio Fiscal',
+			'estatus_did' => 'Estatus',
 			'editable' => 'Editable',
-			'ultimaModificacion' => 'Ultima Modificacion',
+			'ultimaModificacion_dt' => 'Ultima Modificacion',
 		);
 	}
 
@@ -101,11 +108,11 @@ class IngresoPorEvento extends CActiveRecord
 		$criteria->compare('rifas',$this->rifas);
 		$criteria->compare('desayunos',$this->desayunos);
 		$criteria->compare('conferencias',$this->conferencias);
-		$criteria->compare('institucion_id',$this->institucion_id);
-		$criteria->compare('ejercicio_id',$this->ejercicio_id);
-		$criteria->compare('estatus_id',$this->estatus_id);
+		$criteria->compare('institucion_aid',$this->institucion_aid);
+		$criteria->compare('ejercicioFiscal_did',$this->ejercicioFiscal_did);
+		$criteria->compare('estatus_did',$this->estatus_did);
 		$criteria->compare('editable',$this->editable);
-		$criteria->compare('ultimaModificacion',$this->ultimaModificacion,true);
+		$criteria->compare('ultimaModificacion_dt',$this->ultimaModificacion_dt,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

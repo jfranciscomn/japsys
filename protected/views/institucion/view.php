@@ -6,7 +6,6 @@ $this->breadcrumbs=array(
 	'Institucion'=>array('index'),
 	$model->id,
 );
-$valores=array('1'=>'Autorizado', '2'=>'No Autorizado');
 
 $this->menu=array(
 	array('label'=>'Listar Institucion', 'url'=>array('index')),
@@ -28,39 +27,25 @@ $this->menu=array(
 		'siglas',
 		'mision',
 		'vision',
-		'domicio_direccion',
-		'domicilio_cp',
-		array(
-			'name'=>'domicilio_municipio_id',
-			'value'=>$model->domicilioMunicipio->nombre,
-			),
-		'contacto_telefono',
-		'contacto_fax',
-		'contacto_email',
-		'fecha_constitucion',
-		'fecha_transformacion',
+		'domicioDireccion',
+		'domicilioCP',
+		array(	'name'=>'municipio_aid',
+		        'value'=>$model->municipio->nombre,),
+		'contactoTelefono',
+		'contactoFax',
+		'contactoEmail',
+		'fechaConstitucion_dt',
+		'fechaTransformacion_dt',
 		'rfc',
-		array(
-			'name'=>'donativo_deducible',
-			'value'=>$valores[$model->donativo_deducible],
-			),
-		array(
-			'name'=>'donativo_convenio',
-			'value'=>$valores[$model->donativo_convenio],
-			),
+		'donativoDeducible',
+		'donativoConvenio',
 		'cluni',
-		array(
-			'name'=>'ambito_id',
-			'value'=>$model->ambito->nombre,
-			),
-		array(
-			'name'=>'areageografica_id',
-			'value'=>$model->areageografica->nombre,
-			),
-		'horas_promedio_trabajador',
-		array(
-			'name'=>'estatus',
-			'value'=>$model->estatus0->nombre,
-			),
+		array(	'name'=>'ambito_did',
+		        'value'=>$model->ambito->nombre,),
+		array(	'name'=>'areaGeografica_did',
+		        'value'=>$model->areaGeografica->nombre,),
+		'horasPromedio_trabajador',
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

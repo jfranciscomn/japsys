@@ -1,15 +1,15 @@
 <?php
-$this->pageCaption='Crear Area Geografica';
+$this->pageCaption='Create AreaGeografica';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
-$this->pageDescription='Crear nuevo area geografica';
+$this->pageDescription='Crear nuevo areageografica';
 $this->breadcrumbs=array(
 	'Area Geografica'=>array('index'),
 	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'Listar Areas Geograficas', 'url'=>array('index')),
-	array('label'=>'Administrar Areas Geograficas', 'url'=>array('admin')),
+	array('label'=>'Listar Area Geografica', 'url'=>array('index')),
+	array('label'=>'Administrar Area Geografica', 'url'=>array('admin')),
 );
 ?>
 

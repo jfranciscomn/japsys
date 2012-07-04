@@ -5,7 +5,7 @@ $this->pageDescription='';
 $this->breadcrumbs=array(
 	'Ejercicio Fiscal'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(

@@ -1,14 +1,14 @@
 <?php
-$this->pageCaption='Areas Geograficas';
+$this->pageCaption='Area Geografica';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
-$this->pageDescription='Listar areas geograficas';
+$this->pageDescription='Listar area geografica';
 $this->breadcrumbs=array(
-	'Areas Geograficas',
+	'Area Geografica',
 );
 
 $this->menu=array(
-	array('label'=>'Crear Area Geografica', 'url'=>array('create')),
-	array('label'=>'Administrar Areas Geograficas', 'url'=>array('admin')),
+	array('label'=>'Crear AreaGeografica', 'url'=>array('create')),
+	array('label'=>'Administrar AreaGeografica', 'url'=>array('admin')),
 );
 ?>
 

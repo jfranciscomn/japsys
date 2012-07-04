@@ -5,7 +5,7 @@ $this->pageDescription='';
 $this->breadcrumbs=array(
 	'Tipo Usuario'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(

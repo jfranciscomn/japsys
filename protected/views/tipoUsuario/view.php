@@ -25,6 +25,7 @@ $this->menu=array(
 		'id',
 		'nombre',
 		'descripcion',
-		'estatus',
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

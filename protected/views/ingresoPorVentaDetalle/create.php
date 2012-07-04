@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo ingresoporventadetalle';
 $this->breadcrumbs=array(
 	'Ingreso Por Venta Detalle'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

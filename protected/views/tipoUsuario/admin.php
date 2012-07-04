@@ -1,10 +1,10 @@
 <?php
-$this->pageCaption='Manage Tipo Usuario';
+$this->pageCaption='Administrar Tipo Usuario';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
-$this->pageDescription='Administar tipo usuario';
+$this->pageDescription='Administrar tipo usuario';
 $this->breadcrumbs=array(
 	'Tipo Usuario'=>array('index'),
-	'Manage',
+	'Administrar',
 );
 
 $this->menu=array(
@@ -45,7 +45,9 @@ $('.search-form form').submit(function(){
 		'id',
 		'nombre',
 		'descripcion',
-		'estatus',
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
+			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(
 			'class'=>'CButtonColumn',
 		),

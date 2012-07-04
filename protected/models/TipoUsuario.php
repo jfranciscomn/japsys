@@ -7,20 +7,23 @@
  * @property integer $id
  * @property string $nombre
  * @property string $descripcion
- * @property integer $estatus
+ * @property integer $estatus_did
+ *
+ * The followings are the available model relations:
+ * @property Estatus $estatus
+ * @property Usuario[] $usuarios
  */
 class TipoUsuario extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return TipoUsuario the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -37,12 +40,12 @@ class TipoUsuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombre, estatus', 'required'),
-			array('estatus', 'numerical', 'integerOnly'=>true),
+			array('nombre, estatus_did', 'required'),
+			array('estatus_did', 'numerical', 'integerOnly'=>true),
 			array('nombre, descripcion', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, nombre, descripcion, estatus', 'safe', 'on'=>'search'),
+			array('id, nombre, descripcion, estatus_did', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,6 +57,8 @@ class TipoUsuario extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_did'),
+			'usuarios' => array(self::HAS_MANY, 'Usuario', 'tipousuario_did'),
 		);
 	}
 
@@ -66,7 +71,7 @@ class TipoUsuario extends CActiveRecord
 			'id' => 'ID',
 			'nombre' => 'Nombre',
 			'descripcion' => 'Descripcion',
-			'estatus' => 'Estatus',
+			'estatus_did' => 'Estatus',
 		);
 	}
 
@@ -84,7 +89,7 @@ class TipoUsuario extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('descripcion',$this->descripcion,true);
-		$criteria->compare('estatus',$this->estatus);
+		$criteria->compare('estatus_did',$this->estatus_did);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

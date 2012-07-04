@@ -24,11 +24,9 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'nombre',
-		'fecha_inicio',
-		'fecha_fin',
-		array(
-			'name'=>'estatus_id',
-			'value'=>$model->estatus->nombre,
-			),
+		'fechaInicio_dt',
+		'fechaFin_dt',
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

@@ -20,7 +20,15 @@ foreach($this->tableSchema->columns as $column)
 	if(++$count==7)
 		echo "\t\t<?php /*\n";
 	/*echo "\t<b><?php echo CHtml::encode(\$data->getAttributeLabel('{$column->name}')); ?>:</b>\n";*/
-	echo "\t\t<td>\n\t\t\t<?php echo CHtml::encode(\$data->{$column->name}); ?>\n\t\t</td>\n";
+	$partes = explode('_',$column->name);
+	$finalCampo=$partes[count($partes)-1];
+	$modeloColumna=$partes[0];
+	//echo $finalCampo;
+		
+	if($finalCampo=='did' || $finalCampo=='aid')
+		echo "\t\t<td>\n\t\t\t<?php echo CHtml::encode(\$data->{$modeloColumna}->nombre); ?>\n\t\t</td>\n";
+	else
+		echo "\t\t<td>\n\t\t\t<?php echo CHtml::encode(\$data->{$column->name}); ?>\n\t\t</td>\n";
 }
 if($count>=7)
 	echo "\t\t*/ ?>\n";

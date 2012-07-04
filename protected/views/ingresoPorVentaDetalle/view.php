@@ -25,7 +25,9 @@ $this->menu=array(
 		'id',
 		'concepto',
 		'cantidad',
-		'ingresoPorVenta_id',
-		'estatus_id',
+		array(	'name'=>'ingresoPorVenta_aid',
+		        'value'=>$model->ingresoPorVenta->nombre,),
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

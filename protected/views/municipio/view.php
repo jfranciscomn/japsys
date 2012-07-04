@@ -21,17 +21,13 @@ $this->menu=array(
 	'baseScriptUrl'=>false,
 	'cssFile'=>false,
 	'htmlOptions'=>array('class'=>'table table-bordered table-striped'),
-	'attributes'=>array( 
+	'attributes'=>array(
 		'id',
 		'clave',
 		'nombre',
-			array(
-				'name'=>'Estado',
-				'value'=>$model->estado->nombre,
-				),
-			array(
-				'name'=>'estatus',
-				'value'=>$model->estatus0->nombre,
-				),
+		array(	'name'=>'estado_did',
+		        'value'=>$model->estado->nombre,),
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

@@ -1,5 +1,5 @@
 <?php
-$this->pageCaption='Administrar Municipio';
+$this->pageCaption='Manage Municipio';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Administar municipio';
 $this->breadcrumbs=array(
@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Listar Municipios', 'url'=>array('index')),
+	array('label'=>'Listar Municipio', 'url'=>array('index')),
 	array('label'=>'Crear Municipio', 'url'=>array('create')),
 );
 
@@ -45,11 +45,11 @@ $('.search-form form').submit(function(){
 		'id',
 		'clave',
 		'nombre',
-		array(	'name'=>'estado_id',
+		array(	'name'=>'estado_did',
 		        'value'=>'$data->estado->nombre',
 			    'filter'=>CHtml::listData(Estado::model()->findAll(), 'id', 'nombre'),),
-		array(	'name'=>'estatus',
-		        'value'=>'$data->estatus0->nombre',
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
 			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(
 			'class'=>'CButtonColumn',

@@ -15,6 +15,7 @@
 	<div class="<?php echo $form->fieldClass($model, 'concepto'); ?>">
 		<?php echo $form->labelEx($model,'concepto'); ?>
 		<div class="input">
+			
 			<?php echo $form->textField($model,'concepto',array('size'=>60,'maxlength'=>150)); ?>
 			<?php echo $form->error($model,'concepto'); ?>
 		</div>
@@ -23,24 +24,36 @@
 	<div class="<?php echo $form->fieldClass($model, 'cantidad'); ?>">
 		<?php echo $form->labelEx($model,'cantidad'); ?>
 		<div class="input">
+			
 			<?php echo $form->textField($model,'cantidad'); ?>
 			<?php echo $form->error($model,'cantidad'); ?>
 		</div>
 	</div>
 
-	<div class="<?php echo $form->fieldClass($model, 'ingresoPorVenta_id'); ?>">
-		<?php echo $form->labelEx($model,'ingresoPorVenta_id'); ?>
+	<div class="<?php echo $form->fieldClass($model, 'ingresoPorVenta_aid'); ?>">
+		<?php echo $form->labelEx($model,'ingresoPorVenta_aid'); ?>
 		<div class="input">
-			<?php echo $form->textField($model,'ingresoPorVenta_id'); ?>
-			<?php echo $form->error($model,'ingresoPorVenta_id'); ?>
+			
+			<?php $this->widget('ext.custom.widgets.EJuiAutoCompleteFkField', array(
+					      'model'=>$model, 
+					      'attribute'=>'ingresoPorVenta_aid', 
+					      'sourceUrl'=>Yii::app()->createUrl('ingresoPorVenta/autocompletesearch'), 
+					      'showFKField'=>false,
+					      'relName'=>'ingresoPorVenta', // the relation name defined above
+					      'displayAttr'=>'nombre',  // attribute or pseudo-attribute to display
+
+					      'options'=>array(
+					          'minLength'=>1, 
+					      ),
+					 )); ?>			<?php echo $form->error($model,'ingresoPorVenta_aid'); ?>
 		</div>
 	</div>
 
-	<div class="<?php echo $form->fieldClass($model, 'estatus_id'); ?>">
-		<?php echo $form->labelEx($model,'estatus_id'); ?>
+	<div class="<?php echo $form->fieldClass($model, 'estatus_did'); ?>">
+		<?php echo $form->labelEx($model,'estatus_did'); ?>
 		<div class="input">
-			<?php echo $form->textField($model,'estatus_id'); ?>
-			<?php echo $form->error($model,'estatus_id'); ?>
+			
+			<?php echo $form->dropDownList($model,estatus_did,CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre')); ?>			<?php echo $form->error($model,'estatus_did'); ?>
 		</div>
 	</div>
 

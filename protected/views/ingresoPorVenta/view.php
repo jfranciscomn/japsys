@@ -23,10 +23,13 @@ $this->menu=array(
 	'htmlOptions'=>array('class'=>'table table-bordered table-striped'),
 	'attributes'=>array(
 		'id',
-		'institucion_id',
-		'ejercicio_id',
-		'estatus_id',
+		array(	'name'=>'institucion_aid',
+		        'value'=>$model->institucion->nombre,),
+		array(	'name'=>'ejercicio_did',
+		        'value'=>$model->ejercicio->nombre,),
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 		'editable',
-		'ultimaModificacion',
+		'ultimaModificacion_dt',
 	),
 )); ?>

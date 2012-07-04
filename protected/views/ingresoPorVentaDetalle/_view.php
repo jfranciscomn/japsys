@@ -9,9 +9,9 @@
 			<?php echo CHtml::encode($data->cantidad); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->ingresoPorVenta_id); ?>
+			<?php echo CHtml::encode($data->ingresoPorVenta->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->estatus_id); ?>
+			<?php echo CHtml::encode($data->estatus->nombre); ?>
 		</td>
 	</tr>

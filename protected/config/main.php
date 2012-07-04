@@ -35,26 +35,11 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 			'generatorPaths'=>array('ext.bootstrap-theme.gii',),
 		),
-	/*	'rights'=>array(
-			'install'=>true,
-			'superuserName'=>'francisco', 
-			'superuserName'=>'francisco', 
-			'authenticatedName'=>'Authenticated', 
-			'userIdColumn'=>'id',
-			'userNameColumn'=>'usuario', 
-			'enableBizRule'=>true, 
-			'enableBizRuleData'=>false, 
-			'displayDescription'=>true,
-			'flashSuccessKey'=>'RightsSuccess', 
-			'flashErrorKey'=>'RightsError', 
-			'install'=>true,
-			'baseUrl'=>'/rights', 
-			'layout'=>'rights.views.layouts.main', 
-			'appLayout'=>'application.views.layouts.main', 
-			'cssFile'=>'rights.css',
-			'install'=>true,
-			'debug'=>false,
-		),*/
+		'eal'=>array(
+			'table'=>'Estatus',
+			'column'=>'estatus_did',
+			'deleteValue'=>'2',
+		),
 	),
 
 	// application components

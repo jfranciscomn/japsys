@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo ingresoporcuotasderecuperacion';
 $this->breadcrumbs=array(
 	'Ingreso Por Cuotasde Recuperacion'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

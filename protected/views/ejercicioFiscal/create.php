@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo ejerciciofiscal';
 $this->breadcrumbs=array(
 	'Ejercicio Fiscal'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

@@ -6,14 +6,16 @@
 		<td >
 			<b><?php echo CHtml::encode($data->getAttributeLabel('usuario')); ?></b>
 		</td>
-
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('tipousuario_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('institucion_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('tipousuario_did')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('institucion_aid')); ?></b>
+		</td>
+		<td >
+			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus_did')); ?></b>
 		</td>
 	</tr>

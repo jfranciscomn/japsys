@@ -7,8 +7,8 @@
  * @property integer $id
  * @property string $concepto
  * @property double $cantidad
- * @property integer $ingresoPorVenta_id
- * @property integer $estatus_id
+ * @property integer $ingresoPorVenta_aid
+ * @property integer $estatus_did
  *
  * The followings are the available model relations:
  * @property IngresoPorVenta $ingresoPorVenta
@@ -18,14 +18,13 @@ class IngresoPorVentaDetalle extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return IngresoPorVentaDetalle the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -42,13 +41,13 @@ class IngresoPorVentaDetalle extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('cantidad, concepto, ingresoPorVenta_id, estatus_id', 'required'),
-			array('ingresoPorVenta_id, estatus_id', 'numerical', 'integerOnly'=>true),
+			array('concepto, ingresoPorVenta_aid, estatus_did', 'required'),
+			array('ingresoPorVenta_aid, estatus_did', 'numerical', 'integerOnly'=>true),
 			array('cantidad', 'numerical'),
 			array('concepto', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, concepto, cantidad, ingresoPorVenta_id, estatus_id', 'safe', 'on'=>'search'),
+			array('id, concepto, cantidad, ingresoPorVenta_aid, estatus_did', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,8 +59,8 @@ class IngresoPorVentaDetalle extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'ingresoPorVenta' => array(self::BELONGS_TO, 'IngresoPorVenta', 'ingresoPorVenta_id'),
-			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_id'),
+			'ingresoPorVenta' => array(self::BELONGS_TO, 'IngresoPorVenta', 'ingresoPorVenta_aid'),
+			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_did'),
 		);
 	}
 
@@ -74,8 +73,8 @@ class IngresoPorVentaDetalle extends CActiveRecord
 			'id' => 'ID',
 			'concepto' => 'Concepto',
 			'cantidad' => 'Cantidad',
-			'ingresoPorVenta_id' => 'Ingreso Por Venta',
-			'estatus_id' => 'Estatus',
+			'ingresoPorVenta_aid' => 'Ingreso Por Venta',
+			'estatus_did' => 'Estatus',
 		);
 	}
 
@@ -93,8 +92,8 @@ class IngresoPorVentaDetalle extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('concepto',$this->concepto,true);
 		$criteria->compare('cantidad',$this->cantidad);
-		$criteria->compare('ingresoPorVenta_id',$this->ingresoPorVenta_id);
-		$criteria->compare('estatus_id',$this->estatus_id);
+		$criteria->compare('ingresoPorVenta_aid',$this->ingresoPorVenta_aid);
+		$criteria->compare('estatus_did',$this->estatus_did);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

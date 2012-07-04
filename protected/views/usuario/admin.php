@@ -1,10 +1,10 @@
 <?php
-$this->pageCaption='Manage Usuario';
+$this->pageCaption='Administrar Usuario';
 $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
-$this->pageDescription='Administar usuario';
+$this->pageDescription='Administrar usuario';
 $this->breadcrumbs=array(
 	'Usuario'=>array('index'),
-	'Manage',
+	'Administrar',
 );
 
 $this->menu=array(
@@ -44,14 +44,14 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'usuario',
-		array(	'name'=>'tipousuario_id',
+		array(	'name'=>'tipousuario_did',
 		        'value'=>'$data->tipousuario->nombre',
-			    'filter'=>CHtml::listData(TipoUsuario::model()->findAll(), 'id', 'nombre'),),	
-		array(	'name'=>'institucion_id',
+			    'filter'=>CHtml::listData(Tipousuario::model()->findAll(), 'id', 'nombre'),),
+		array(	'name'=>'institucion_aid',
 		        'value'=>'$data->institucion->nombre',
 			    'filter'=>CHtml::listData(Institucion::model()->findAll(), 'id', 'nombre'),),
-		array(	'name'=>'estatus',
-		        'value'=>'$data->estatus0->nombre',
+		array(	'name'=>'estatus_did',
+		        'value'=>'$data->estatus->nombre',
 			    'filter'=>CHtml::listData(Estatus::model()->findAll(), 'id', 'nombre'),),
 		array(
 			'class'=>'CButtonColumn',

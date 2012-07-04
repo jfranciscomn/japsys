@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo municipio';
 $this->breadcrumbs=array(
 	'Municipio'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

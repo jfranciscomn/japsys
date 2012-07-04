@@ -10,9 +10,9 @@
 			<b><?php echo CHtml::encode($data->getAttributeLabel('cantidad')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('ingresoPorVenta_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('ingresoPorVenta_aid')); ?></b>
 		</td>
 		<td >
-			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus_id')); ?></b>
+			<b><?php echo CHtml::encode($data->getAttributeLabel('estatus_did')); ?></b>
 		</td>
 	</tr>

@@ -7,25 +7,23 @@
  * @property integer $id
  * @property string $clave
  * @property string $nombre
- * @property integer $estatus
+ * @property integer $estatus_did
  *
  * The followings are the available model relations:
- * @property Estatus $estatus0
- * @property Institucion $institucion
- * @property Municipio $municipio
+ * @property Estatus $estatus
+ * @property Municipio[] $municipios
  */
 class Estado extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return Estado the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -42,13 +40,13 @@ class Estado extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('clave, nombre, estatus', 'required'),
-			array('estatus', 'numerical', 'integerOnly'=>true),
+			array('clave, nombre, estatus_did', 'required'),
+			array('estatus_did', 'numerical', 'integerOnly'=>true),
 			array('clave', 'length', 'max'=>45),
 			array('nombre', 'length', 'max'=>145),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, clave, nombre, estatus', 'safe', 'on'=>'search'),
+			array('id, clave, nombre, estatus_did', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,9 +58,8 @@ class Estado extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'estatus0' => array(self::BELONGS_TO, 'Estatus', 'estatus'),
-			'institucion' => array(self::HAS_ONE, 'Institucion', 'domicilio_estado_id'),
-			'municipio' => array(self::HAS_ONE, 'Municipio', 'estado_id'),
+			'estatus' => array(self::BELONGS_TO, 'Estatus', 'estatus_did'),
+			'municipios' => array(self::HAS_MANY, 'Municipio', 'estado_did'),
 		);
 	}
 
@@ -75,7 +72,7 @@ class Estado extends CActiveRecord
 			'id' => 'ID',
 			'clave' => 'Clave',
 			'nombre' => 'Nombre',
-			'estatus' => 'Estatus',
+			'estatus_did' => 'Estatus',
 		);
 	}
 
@@ -93,7 +90,7 @@ class Estado extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('clave',$this->clave,true);
 		$criteria->compare('nombre',$this->nombre,true);
-		$criteria->compare('estatus',$this->estatus);
+		$criteria->compare('estatus_did',$this->estatus_did);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

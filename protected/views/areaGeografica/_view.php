@@ -6,6 +6,6 @@
 			<?php echo CHtml::encode($data->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->estatus0->nombre); ?>
+			<?php echo CHtml::encode($data->estatus->nombre); ?>
 		</td>
 	</tr>

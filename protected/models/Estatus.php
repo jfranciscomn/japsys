@@ -8,24 +8,32 @@
  * @property string $nombre
  *
  * The followings are the available model relations:
- * @property Ambito $ambito
- * @property Estado $estado
- * @property Institucion $institucion
- * @property Municipio $municipio
- * @property Usuario $usuario
+ * @property Ambito[] $ambitos
+ * @property EjercicioFiscal[] $ejercicioFiscals
+ * @property Estado[] $estados
+ * @property GastoDeAdministracion[] $gastoDeAdministracions
+ * @property GastoOperativo[] $gastoOperativos
+ * @property IngresoPorCuotasdeRecuperacion[] $ingresoPorCuotasdeRecuperacions
+ * @property IngresoPorDonativo[] $ingresoPorDonativos
+ * @property IngresoPorEvento[] $ingresoPorEventos
+ * @property IngresoPorVenta[] $ingresoPorVentas
+ * @property IngresoPorVentaDetalle[] $ingresoPorVentaDetalles
+ * @property Institucion[] $institucions
+ * @property Municipio[] $municipios
+ * @property TipoUsuario[] $tipoUsuarios
+ * @property Usuario[] $usuarios
  */
 class Estatus extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
 	 * @return Estatus the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
 	}
-	
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -58,11 +66,20 @@ class Estatus extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'ambito' => array(self::HAS_ONE, 'Ambito', 'estatus'),
-			'estado' => array(self::HAS_ONE, 'Estado', 'estatus'),
-			'institucion' => array(self::HAS_ONE, 'Institucion', 'estatus'),
-			'municipio' => array(self::HAS_ONE, 'Municipio', 'estatus'),
-			'usuario' => array(self::HAS_ONE, 'Usuario', 'estatus'),
+			'ambitos' => array(self::HAS_MANY, 'Ambito', 'estatus_did'),
+			'ejercicioFiscals' => array(self::HAS_MANY, 'EjercicioFiscal', 'estatus_did'),
+			'estados' => array(self::HAS_MANY, 'Estado', 'estatus_did'),
+			'gastoDeAdministracions' => array(self::HAS_MANY, 'GastoDeAdministracion', 'estatus_did'),
+			'gastoOperativos' => array(self::HAS_MANY, 'GastoOperativo', 'estatus_did'),
+			'ingresoPorCuotasdeRecuperacions' => array(self::HAS_MANY, 'IngresoPorCuotasdeRecuperacion', 'estatus_did'),
+			'ingresoPorDonativos' => array(self::HAS_MANY, 'IngresoPorDonativo', 'estatus_did'),
+			'ingresoPorEventos' => array(self::HAS_MANY, 'IngresoPorEvento', 'estatus_did'),
+			'ingresoPorVentas' => array(self::HAS_MANY, 'IngresoPorVenta', 'estatus_did'),
+			'ingresoPorVentaDetalles' => array(self::HAS_MANY, 'IngresoPorVentaDetalle', 'estatus_did'),
+			'institucions' => array(self::HAS_MANY, 'Institucion', 'estatus_did'),
+			'municipios' => array(self::HAS_MANY, 'Municipio', 'estatus_did'),
+			'tipoUsuarios' => array(self::HAS_MANY, 'TipoUsuario', 'estatus_did'),
+			'usuarios' => array(self::HAS_MANY, 'Usuario', 'estatus_did'),
 		);
 	}
 

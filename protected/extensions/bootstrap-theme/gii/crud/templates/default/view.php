@@ -33,8 +33,20 @@ $this->menu=array(
 	'htmlOptions'=>array('class'=>'table table-bordered table-striped'),
 	'attributes'=>array(
 <?php
+
 foreach($this->tableSchema->columns as $column)
-	echo "\t\t'".$column->name."',\n";
+{
+	$partes = explode('_',$column->name);
+	$finalCampo=$partes[count($partes)-1];
+	$relacion=$partes[0];
+
+	if($finalCampo=='did' || $finalCampo=='aid')	
+		echo "\t\tarray(	'name'=>'{$column->name}',
+		        'value'=>\$model->{$relacion}->nombre,),\n";
+	else
+		echo "\t\t'".$column->name."',\n";
+}
+
 ?>
 	),
 )); ?>

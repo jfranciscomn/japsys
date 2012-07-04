@@ -15,6 +15,7 @@
 	<div class="<?php echo $form->fieldClass($model, 'nombre'); ?>">
 		<?php echo $form->labelEx($model,'nombre'); ?>
 		<div class="input">
+			
 			<?php echo $form->textField($model,'nombre',array('size'=>45,'maxlength'=>45)); ?>
 			<?php echo $form->error($model,'nombre'); ?>
 		</div>

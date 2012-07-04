@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - ' . $this->pageCaption;
 $this->pageDescription='Crear nuevo ingresopordonativo';
 $this->breadcrumbs=array(
 	'Ingreso Por Donativo'=>array('index'),
-	'Create',
+	'Crear',
 );
 
 $this->menu=array(

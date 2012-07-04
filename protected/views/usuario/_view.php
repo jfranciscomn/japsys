@@ -9,14 +9,9 @@
 			<?php echo CHtml::encode($data->tipousuario->nombre); ?>
 		</td>
 		<td>
-			<?php
-			 	if(isset($data->institucion))
-					echo CHtml::encode($data->institucion->nombre);
-				else
-				  	echo CHtml::encode('');
-				?>
+			<?php echo CHtml::encode($data->institucion->nombre); ?>
 		</td>
 		<td>
-			<?php echo CHtml::encode($data->estatus0->nombre); ?>
+			<?php echo CHtml::encode($data->estatus->nombre); ?>
 		</td>
 	</tr>

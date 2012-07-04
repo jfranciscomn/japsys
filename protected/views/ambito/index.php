@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Crear Ambito', 'url'=>array('create')),
-	array('label'=>'Administrar Ambitos', 'url'=>array('admin')),
+	array('label'=>'Administrar Ambito', 'url'=>array('admin')),
 );
 ?>
 

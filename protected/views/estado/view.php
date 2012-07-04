@@ -25,9 +25,7 @@ $this->menu=array(
 		'id',
 		'clave',
 		'nombre',
-		array(
-			'name'=>'estatus',
-			'value'=>$model->estatus0->nombre,
-			),
+		array(	'name'=>'estatus_did',
+		        'value'=>$model->estatus->nombre,),
 	),
 )); ?>

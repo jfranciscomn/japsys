@@ -58,7 +58,22 @@ foreach($this->tableSchema->columns as $column)
 {
 	if(++$count==7)
 		echo "\t\t/*\n";
-	echo "\t\t'".$column->name."',\n";
+	$partes = explode('_',$column->name);
+	$finalCampo=$partes[count($partes)-1];
+	$relacion=$partes[0];
+	$modeloColumna=ucwords($partes[0]);
+	
+	if($finalCampo=='did' || $finalCampo=='aid')
+		echo "\t\tarray(	'name'=>'{$column->name}',
+		        'value'=>'\$data->{$relacion}->nombre',
+			    'filter'=>CHtml::listData({$modeloColumna}::model()->findAll(), 'id', 'nombre'),),\n";
+	else
+		echo "\t\t'".$column->name."',\n";
+	/*
+		array(	'name'=>'tipousuario_id',
+		        'value'=>'$data->tipousuario->nombre',
+			    'filter'=>CHtml::listData(TipoUsuario::model()->findAll(), 'id', 'nombre'),),
+		*/
 }
 if($count>=7)
 	echo "\t\t*/\n";

@@ -197,6 +197,7 @@ class EJuiAutoCompleteFkField extends CJuiAutoComplete {
         $this->options['select']="js:function(event, ui){\$('#".$this->_fieldName."').val(ui.item.id);\$('#".$this->_saveName."').val(ui.item.value);}";
         // when the autoComplete field loses focus, refresh the field with current value of _save
         // this is either the previous value if user didn't pick anything; or the new value if they did
+		
         $this->htmlOptions['onblur']="$(this).val($('#".$this->_saveName."').val());";
     }
 
